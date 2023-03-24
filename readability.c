@@ -6,6 +6,7 @@
 
 char *get_string(char *str);
 int count_letters(char *text);
+int count_words(char *text);
 
 int main(void)
 {
@@ -43,5 +44,19 @@ int count_letters(char *text)
         }
     }
     return letters;
+}
+
+int count_words(char *text)
+{
+    int words = 1;
+    for (int i = 0; i < strlen(text); i++)
+    {
+        // isspace looks for newlines, spaces, and tabs;
+        if (isspace(text[i]))
+        {
+            words++;
+        }
+    }
+    return words;
 }
 
