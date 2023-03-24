@@ -5,7 +5,7 @@
 #include <math.h>
 
 char *get_string(char *str);
-
+int count_letters(char *text);
 
 int main(void)
 {
@@ -30,3 +30,18 @@ char *get_string(char *str)
 
     return text;
 }
+
+int count_letters(char *text)
+{
+    int letters = 0;
+    for (int i = 0; i < strlen(text); i++)
+    {
+        // is alpha looks for alphabetical characters
+        if (isalpha(text[i]))
+        {
+            letters++;
+        }
+    }
+    return letters;
+}
+
