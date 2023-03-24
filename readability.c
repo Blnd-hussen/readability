@@ -7,6 +7,7 @@
 char *get_string(char *str);
 int count_letters(char *text);
 int count_words(char *text);
+int count_sentences(char *text);
 
 int main(void)
 {
@@ -60,3 +61,15 @@ int count_words(char *text)
     return words;
 }
 
+int count_sentences(char *text)
+{
+    int sentences = 0;
+    for (int i = 0; i < strlen(text); i++)
+    {
+        if (text[i] == '!' || text[i] == '.' || text[i] == '?')
+        {
+            sentences++;
+        }
+    }
+    return sentences;
+}
