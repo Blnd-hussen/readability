@@ -19,6 +19,34 @@ int main(void)
         return 1;
     }
   
+     // count letters
+    int letters = count_letters(text);
+    //count words
+    int words = count_words(text);
+    //count sentences
+    int sentences = count_sentences(text);
+
+    // find the average number of sentences and letters per 100 words in the text.
+    double L = (double)letters / words * 100;
+    double S = (double)sentences / words * 100;
+
+    // calculate the grade
+    double index = 0.0588 * L - 0.296 * S - 15.8;
+    int grade = round(index);
+
+    // print the grade
+    if (grade >= 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else if (grade < 1)
+    {
+        printf("Before Grade 1\n");
+    }
+    else
+    {
+        printf("Grade %i\n", grade);
+    }
     free(text);
 
 }
